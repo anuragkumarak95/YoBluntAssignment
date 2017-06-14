@@ -1,4 +1,4 @@
-# YoBluntAssingment
+# YoBluntAssignment
 *Android Development Assignment* given to me by **YoBlunt** organization.
 
 
