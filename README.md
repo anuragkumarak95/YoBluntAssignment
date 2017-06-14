@@ -19,5 +19,9 @@ You can easily find APK file for the same app [here](https://github.com/anuragku
     
 **Thank you**.
 
+Environment Specifications:
+1. IDE - Android Studio
+2. OS - Windows 8.1
+
 Cheers,
 Anurag Kumar
