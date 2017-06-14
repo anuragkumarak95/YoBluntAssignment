@@ -2,6 +2,9 @@
 *Android Development Assignment* given to me by **YoBlunt** organization.
 
 
+Preview
+<img src="https://github.com/anuragkumarak95/YoBluntAssignment/blob/master/Screenshot_20170614-164645.png" width="200px"/>
+
 Hello EveryOne,
 
 This Android Application showcases ExoPlayer HLS Video playback functionalities.<Enter>
