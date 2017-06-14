@@ -42,6 +42,8 @@ import com.google.android.exoplayer2.util.Util;
 import com.yoblunt.anuragkumar.yobluntassingment.PlayerControl;
 import com.yoblunt.anuragkumar.yobluntassingment.R;
 
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -178,11 +180,26 @@ public class HlsListAdapter extends RecyclerView.Adapter<HlsListAdapter.ViewHold
                     }
 
                     play_pause_Track();
-                    Log.e("HLSADAPTER",""+realDurationMillis);
                     //volume controls
                     float vol = exoPlayer.getVolume();
                     //mute
                     //exoPlayer.setVolume(0f);
+
+                    final Handler hd  =new Handler();
+                    final Runnable checkUi = new Runnable() {
+                        @Override
+                        public void run() {
+                            long currentDuration = playerControl.getDuration()-playerControl.getCurrentPosition();
+                            long seconds = TimeUnit.MILLISECONDS.toSeconds(currentDuration);
+                            long minutes = seconds/60;
+                            long remaining_sec = seconds%60;
+                            textView.setText(minutes+":"+remaining_sec);
+                            seekBar.setProgress(playerControl.getCurrentPosition());
+                            hd.postDelayed(this, 100);
+                        }
+                    };
+                    checkUi.run();
+
                 }
             });
 
@@ -201,6 +218,7 @@ public class HlsListAdapter extends RecyclerView.Adapter<HlsListAdapter.ViewHold
 
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {
+                    //seek to a point in video implementation.
                     playerControl.seekTo(seekBar.getProgress());
                 }
             });
@@ -282,6 +300,7 @@ public class HlsListAdapter extends RecyclerView.Adapter<HlsListAdapter.ViewHold
             return new DefaultHttpDataSourceFactory(userAgent, bandwidthMeter);
         }
 
+        //Release Player.
         private void releasePlayer(){
             exoPlayer.release();
         }

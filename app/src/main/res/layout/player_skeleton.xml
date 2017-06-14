@@ -9,7 +9,6 @@
           card_view:cardBackgroundColor="#F5F5F5"
           card_view:cardCornerRadius="5dp"
           android:layout_margin="1dp"
-          android:id="@+id/task_list_card"
           card_view:cardElevation="1dp">
 
         <RelativeLayout
@@ -28,7 +27,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#ffff"
+                    android:background="#fff"
                     android:id="@+id/playercontrols"
                     android:layout_alignBottom="@+id/textureView"
                     android:padding="5dp"
@@ -40,7 +39,7 @@
                         android:layout_weight="1"
                         android:layout_marginRight="2dp"
                         android:text="0"
-                        android:textColor="#ffff"
+                        android:textColor="#000"
                         android:gravity="center"
                         android:textSize="12sp"
                         android:id="@+id/seekerText"/>
@@ -56,6 +55,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/play_pause_button"
+                        android:background="@android:color/transparent"
                         android:textColor="#ffff"
                         android:layout_weight="1"
                         android:src="@drawable/ic_media_play"/>

@@ -31,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycleView);
 
         String hlsList[] = {"http://playertest.longtailvideo.com/adaptive/bbbfull/bbbfull.m3u8",
-                "http://playertest.longtailvideo.com/adaptive/bbbfull/bbbfull.m3u8",
-                "http://playertest.longtailvideo.com/adaptive/bbbfull/bbbfull.m3u8"};
+                            "http://www.streambox.fr/playlists/test_001/stream.m3u8",
+                            "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+                            "https://mnmedias.api.telequebec.tv/m3u8/29880.m3u8"};
         HlsListAdapter adapter= new HlsListAdapter(this,hlsList);
 
         recyclerView.setHasFixedSize(false);
